@@ -1,0 +1,11 @@
+version: '3'
+services:
+  rustserver:
+    image: wesleyarizio/rust-server-docker-swarm:latest
+    ports:
+      - "80:8080"
+    deploy:
+      mode: replicated
+      replicas: 10
+      restart_policy:
+        condition: on-failure
